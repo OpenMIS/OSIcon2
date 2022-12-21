@@ -58,7 +58,7 @@ SmartHelper_Debug     开启生成前后调用Smart.Helper.exe的Debug功能，�
   [注释end]-->
   <PropertyGroup>
     <RootNamespace>OSIcon.Explorer</RootNamespace>
-    <Version>22.12.21.17</Version>
+    <Version>22.12.21.18</Version>
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>net48;net6.0-windows10.0.22621.0</TargetFrameworks>
     <Nullable>enable</Nullable>
