@@ -57,12 +57,13 @@ SmartHelper_Debug     开启生成前后调用Smart.Helper.exe的Debug功能，�
 </Target>
   [注释end]-->
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <Version>22.12.21.17</Version>
     <RootNamespace>OSIcon</RootNamespace>
-    <TargetFrameworks>net48;net6.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFrameworks>net48;net6.0-windows10.0.22621.0</TargetFrameworks>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>false</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -74,25 +75,13 @@ SmartHelper_Debug     开启生成前后调用Smart.Helper.exe的Debug功能，�
     <RepositoryUrl>https://github.com/OpenMIS/OSIcon2</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>keyPair.snk</AssemblyOriginatorKeyFile>    
+    <AssemblyOriginatorKeyFile>../OSIcon2/keyPair.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  
   <ItemGroup>
-    <!-- 此处作者使用中央包关联，请自行从 nuget.org 上使用最新的版本 -->
-    <PackageReference Include="System.Drawing.Common" />
-    <PackageReference Include="System.Resources.Extensions" />
+    <Compile Include="..\OSIcon2\GlobalUsings.cs" Link="GlobalUsings.cs" />
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <ProjectReference Include="..\OSIcon2\OSIcon2.csproj" />
   </ItemGroup>
 </Project>

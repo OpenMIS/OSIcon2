@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <!--[注释begin] 注释版本：1.6
 支持读取的属性：
 NetString             Directory.Build.props里设置的.NET的版本，一般是最新的，比如：net7.0。
@@ -57,42 +57,50 @@ SmartHelper_Debug     开启生成前后调用Smart.Helper.exe的Debug功能，�
 </Target>
   [注释end]-->
   <PropertyGroup>
+    <RootNamespace>OSIcon.Explorer</RootNamespace>
     <Version>22.12.21.17</Version>
-    <RootNamespace>OSIcon</RootNamespace>
-    <TargetFrameworks>net48;net6.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net48;net6.0-windows10.0.22621.0</TargetFrameworks>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>false</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Description>
-      Clone From OSIcon https://github.com/sn4k3/OSIcon. Rebuild support net6.0 and net48.
-    </Description>
-    <Copyright>MIT</Copyright>
-    <RepositoryUrl>https://github.com/OpenMIS/OSIcon2</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>keyPair.snk</AssemblyOriginatorKeyFile>    
+    <AssemblyOriginatorKeyFile>../OSIcon2/keyPair.snk</AssemblyOriginatorKeyFile>
+
+    <ProductName>OSIcon Explorer</ProductName>
+    <AssemblyTitle>OSIcon Explorer</AssemblyTitle>
+    <Description>OSIcon Library demo</Description>
+    <Copyright>Copyright ©  2015</Copyright>
   </PropertyGroup>
-  
   <ItemGroup>
-    <!-- 此处作者使用中央包关联，请自行从 nuget.org 上使用最新的版本 -->
-    <PackageReference Include="System.Drawing.Common" />
-    <PackageReference Include="System.Resources.Extensions" />
+    <ProjectReference Include="..\OSIcon2.WindowsForms\OSIcon2.WindowsForms.csproj" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <Compile Include="..\OSIcon2\GlobalUsings.cs" Link="GlobalUsings.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

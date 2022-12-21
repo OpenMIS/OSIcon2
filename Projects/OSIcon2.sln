@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSIcon2", "OSIcon2\OSIcon2.csproj", "{FE6BB074-F591-4C27-829F-497EC65EC168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSIcon2", "OSIcon2\OSIcon2.csproj", "{FE6BB074-F591-4C27-829F-497EC65EC168}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSIcon2.WindowsForms", "OSIcon2.WindowsForms\OSIcon2.WindowsForms.csproj", "{A2ABF9D2-DF0B-479D-97E0-E38328D23386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSIcon2.Explorer", "OSIcon2.Explorer\OSIcon2.Explorer.csproj", "{EB970D85-EC37-4119-8268-E2F51A440A45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FE6BB074-F591-4C27-829F-497EC65EC168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6BB074-F591-4C27-829F-497EC65EC168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6BB074-F591-4C27-829F-497EC65EC168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2ABF9D2-DF0B-479D-97E0-E38328D23386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ABF9D2-DF0B-479D-97E0-E38328D23386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ABF9D2-DF0B-479D-97E0-E38328D23386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ABF9D2-DF0B-479D-97E0-E38328D23386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB970D85-EC37-4119-8268-E2F51A440A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB970D85-EC37-4119-8268-E2F51A440A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB970D85-EC37-4119-8268-E2F51A440A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB970D85-EC37-4119-8268-E2F51A440A45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
